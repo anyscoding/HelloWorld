@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		none
+		any 'python:3.9.4'
 	}
 	environment {
 		DISABLE_AUTH = 'true'

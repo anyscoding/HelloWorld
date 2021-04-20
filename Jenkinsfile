@@ -14,12 +14,15 @@ pipeline {
 		}
 		stage('build') {
 			steps {
-				sh 'echo "this is stage build version: $version"'
+				sh 'echo "this is stage build DB_ENGINE: $DISABLE_AUTH, DB_ENGINE: $DB_ENGINE"'
+				sh 'ls'
+				sh 'cat README.md'
+				sh 'cat newfile'
 			}
 		}
 		stage('test') {
 			steps {
-				sh 'echo "this is stage test, test switch $runUT"'
+				sh 'echo "this is stage test"'
 			}
 		}
 		stage('deploy') {

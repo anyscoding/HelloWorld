@@ -10,12 +10,12 @@ pipeline {
 		}
 		stage('build') {
 			steps {
-				echo 'this is stage build'
+				echo 'this is stage build version: $version'
 			}
 		}
 		stage('test') {
 			steps {
-				echo 'this is stage test'
+				echo 'this is stage test, test switch $runUT'
 			}
 		}
 		stage('deploy') {

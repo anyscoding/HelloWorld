@@ -1,11 +1,19 @@
 pipeline {
 	agent {
-		any 'python:3.5.1'
+		docker {
+			image 'maven:3.8.1-adoptopenjdk-11'
+        		label 'my-defined-label'
+        		args  '-v /tmp:/tmp'
+		}
+	}
+	environment {
+		DISABLE_AUTH = 'true'
+		DB_ENGINE    = 'sqlite'
 	}
 	stages {
 		stage('hello') {
 			steps {
-				echo 'Hello World!'
+				sh 'printenv'
 			}
 		}
 		stage('build') {
